@@ -33,7 +33,16 @@ I første omgang er det lettest at oprette et nyt repository på Githubs hjemmes
 
 http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
 https://guides.github.com/introduction/flow/
+https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows
 
+
+http://nvie.com/posts/a-successful-git-branching-model/
+
+Den model er imidlertid ikke helt enkel. Flere kritikere af modellen har argumenteret, at denne måde at bruge developer-branchen på faktisk er den måde, master-branchen burde bruges på. Til mindre projekter er jeg helt enig. Branches er noget af det, der gør Git svært, så det er en god idé at holde det så enkelt som muligt.
+
+https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/
+(bemærk henvisningen til den klassiske artikel om GOTO, ouch!)
+http://scottchacon.com/2011/08/31/github-flow.html
 
 Brug en ny branch til dine ændringer, så alle commits bliver samlet i samme pull request
 
