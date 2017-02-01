@@ -1,0 +1,54 @@
+Min guide til Git for begyndere
+
+Af Jesper Stein Sandal
+Softwareudvikling er ét af de få fag, hvor man har en tidsmaskine i værktøjskassen. Tømreren måler altid to gange, for når først brættet er savet, så er der ingen vej tilbage. Men det er der i programmering. Vi kan skrue tiden tilbage til før vi tilføjede de kodelinjer, der fik det hele til at eksplodere i exceptions.
+
+Men programmørens tidsmaskine er næsten mere kompliceret end den fysik, der beskriver, hvorfor tidsmaskiner ikke kan lade sig gøre. Og alligevel er der ingen vej uden om: Versionsstyring er uundværligt.
+
+Uden versionsstyring er det noget nær umuligt at arbejde sammen om et softwareprojekt, og uden versionsstyring ender man alligevel med at skulle holde styr på forskellige versioner af sin kode, når man prøver at omskrive en funktion.
+
+Derfor er det svært at komme uden om Git, der er dén udgave af versionsstyring, som også har lagt navn til kodedelingssitet Github. Men Git er på ingen måde en begyndervenlig størrelse, og det er derfor, jeg nu prøver at skrive denne guide i takt med mit tredje forsøg på at tæmme Git-monstret.
+
+Mit første forsøg strandede på, at hvis man på hjemmesiden for Git-projektet forsøger at læse [vejledningen](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), så vil man opdage, at den først og fremmest forklarer i pinagtige detaljer, hvordan Git virker - ikke hvordan man bruger Git. 
+
+I det hele taget finder man flere [vejledninger](http://www.vogella.com/tutorials/Git/article.html), der tager udgangspunkt i, hvordan Git arbejder med at versionere din kode, i stedet for at tage udgangspunkt i dine arbejdsgange.
+
+Det er nemlig det svære ved Git. Det er et værktøj til at holde styr på de filer, der bruges af din applikation, og Git gør meget lidt af sig selv. Det er dig, der skal fortælle Git, hvad der skal være en del af din applikation.
+
+Et godt råd er altid at antage, at der er et trin mere, end du intuitivt ville tro. At tilføje en fil til dit projekt er ikke det samme som at gemme filen i projektet.
+
+Et andet godt råd er, at du ikke bør antage, at et begreb eller en kommando i Git gør dét, du intuitivt ville tro ud fra navnet. 
+
+Vær også forberedt på mærkværdige overraskelser - som eksempelvis at ryge ind i en Vim-lignende editor, hvis du glemmer at skrive en commit-besked fra kommandolinjen. Og en Vim-lignende editor er ikke et rart sted at være (for at komme ud igen er du nødt til at trykke på escape og skrive **:q** og trykke enter. Ja, kolonet skal indtastes, hvorfor fortaber sig i fortidens Unix-tåger).
+
+Du skal også hele tiden være opmærksom på, hvor du er henne. Git arbejder med en træ-metafor med grene, så du skal sikre dig, at du arbejder på den rigtige gren. Grene kan så vokse sammen med stammen igen, så det er måske mere en jernbane-metafor. Er du i tvivl, så spørg Git, hvor du er lige nu med kommandoen **git status**, som fortæller dig, hvilken **branch** der er aktiv.
+
+Lad os begynde ved begyndelsen. Først skal Git naturligvis [downloades](https://git-scm.com/downloads) og installeres. Den del er forholdsvis nem. Git til Windows inkluderer sin egen udgave af Bash, men Git kan også bruges fra Powershell. Installationsprogrammet henviser ganske vist kun til den klassiske kommandoprompt cmd.exe, men Powershell virker også, hvis man installerer Git med standardindstillingerne.
+
+Det næste trin er at vælge et **repository**. Det er det sted, du lagrer dit projekt. Det kan være en lokal mappe på din pc, eller det kan være på en server hos eksempelvis Github. Det sidste er lidt mere besværligt, men da det også er det mest nyttige, så vil jeg bruge et Github-repository i min gennemgang.
+
+I første omgang er det lettest at oprette et nyt repository på Githubs hjemmeside. I det hele taget vil jeg anbefale at bruge Githubs grænseflade til alt, hvad der hedder administration af dit repository, da det er let at miste overblikket og lave fejl i kommandolinjen. Det er selvfølgelig en smagssag.
+
+(Vi kan lægge denne tekst og screenshots i Git-projektet)
+
+http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
+https://guides.github.com/introduction/flow/
+
+
+Brug en ny branch til dine ændringer, så alle commits bliver samlet i samme pull request
+
+
+Så lad os se nærmere på dyret ved først at få de grundlæggende begreber på plads. 
+
+**Repository:** Et repository er det sted, du lagrer dit projekt. Det kan være en lokal mappe eller en ekstern server eller tjeneste som Github. 
+
+**Commit:** Et commit er som et save game i et computerspil. Når du har nået et punkt, hvor det er en god idé at lave et save game, du kan vende tilbage til, så laver du et commit. Det gemmer de ændringer, du har lavet indtil videre.
+
+**Branch:** En branch er noget du bruger, når du har brug for at arbejde på en kopi af projektet og ikke vil gemme dine ændringer direkte i 'master'-kopien.
+
+Merge:
+
+**Pull:** Når du skal hente og integrere de ændringer i projektet, som ligger i repository'et, så laver du et pull.
+
+
+
