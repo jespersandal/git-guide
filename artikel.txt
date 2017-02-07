@@ -54,19 +54,6 @@ Git henter nu filerne fra Github og opretter en ny mappe med samme navn som dit 
 
 Intet af det, du laver i din lokale mappe, påvirker på nuværende tidspunkt dét, der ligger på Github.
 
-###Branches og merges
-Inden vi går videre er det på sin plads at tage en hurtig snak om *branches*. En branch er en forgrening på versionstræet. Det er en kopi af din originale *master branch*, hvor alle ændringer, du laver, kun påvirker kopien, indtil du laver et *merge*, der fletter din branch sammen med master.
-
-Fordelen ved en branch er, at du kan arbejde på en ny funktion eller omskrive en eksisterende funktion med mulighed for at teste alt på din kopi, uden det ødelægger den udgave, du ved virker. Derfor har den [normale praksis](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) været at have en ['develop' branch](http://nvie.com/posts/a-successful-git-branching-model/), som man laver alle ændringer på. 
-
-I praksis udvikler det sig imidlertid til, at man laver yderligere branches fra sin develop-branch, og det kan gøre strukturen unødvendigt kompliceret, [mener kritikerne](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/) af denne flow-model. Problemet er, at din master-branch ikke har nogen væsentlig funktion på denne måde. Derfor kan det give mening at droppe sin develop-branch og blot [forgrene direkte fra master-branch](http://scottchacon.com/2011/08/31/github-flow.html).
-
-Det er velegnet, hvis man sidder på et projekt, hvor ændringer skal udrulles, når de er testet og klar. Til større projekter kan det klassiske git-flow være nødvendigt, men til mindre projekter er den simplere model fornuftig, hvis man blot sørger for at håndtere sine merges korrekt. Det vender vi tilbage til.
-
-For at lave en branch skal man bruge kommandoen **>git branch** efterfulgt af navnet på den branch, man vil oprette. Du er på nuværende tidspunkt ikke inde i den nye branch. 
-
-Du skifter til en branch med kommandoen **>git checkout** efterfulgt af navnet på den branch, du vil skifte til. Eller du kan oprette en branch og skifte til den i ét hug med kommandoen **>git checkout -b** efterfulgt af navnet på den nye branch.
-
 ###Tilføje filer og ændringer med Add og Commit
 Med Git skal du i første omgang kun koncentrere dig om at holde styr på de ændringer, du laver lokalt på projektet. For at se, hvilke ændringer du har lavet på din lokale udgave, kan du bruge kommandoen **>git status**. Den fortæller dig, hvilke filer der er ændret eller tilføjet i mappen i den branch, du arbejder på lige nu.
 
@@ -101,6 +88,21 @@ Hvis to personer har ændret i de samme linjer, så bliver det lidt vanskeligere
 Der findes værktøjer til at gøre dette eftersyn af konflikter lidt mere overskueligt, men man kan nå langt blot med Githubs webbaserede grænseflade.
 
 Når der er en konflikt i en fil, vil Git markere de pågældende linjer, så man kan også gå ind og rette i sine filer og lave et nyt forsøg på et commit. Git kan kun se, at der er forskel mellem to versioner, så det er op til dig at beslutte, hvilke ændringer der skal benyttes.
+
+###Branches og merges
+Inden vi slutter er det på sin plads at tage en hurtig snak om *branches*. En branch er en forgrening på versionstræet. Det er en kopi af din originale *master branch*, hvor alle ændringer, du laver, kun påvirker kopien, indtil du laver et *merge*, der fletter din branch sammen med master.
+
+Fordelen ved en branch er, at du kan arbejde på en ny funktion eller omskrive en eksisterende funktion med mulighed for at teste alt på din kopi, uden det ødelægger den udgave, du ved virker. Derfor har den [normale praksis](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) været at have en ['develop' branch](http://nvie.com/posts/a-successful-git-branching-model/), som man laver alle ændringer på. 
+
+I praksis udvikler det sig imidlertid til, at man laver yderligere branches fra sin develop-branch, og det kan gøre strukturen unødvendigt kompliceret, [mener kritikerne](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/) af denne flow-model. Problemet er, at din master-branch ikke har nogen væsentlig funktion på denne måde. Derfor kan det give mening at droppe sin develop-branch og blot [forgrene direkte fra master-branch](http://scottchacon.com/2011/08/31/github-flow.html).
+
+Det er velegnet, hvis man sidder på et projekt, hvor ændringer skal udrulles, når de er testet og klar. Til større projekter kan det klassiske git-flow være nødvendigt, men til mindre projekter er den simplere model fornuftig, hvis man blot sørger for at håndtere sine merges korrekt. Det vender vi tilbage til.
+
+For at lave en branch skal man bruge kommandoen **>git branch** efterfulgt af navnet på den branch, man vil oprette. Du er på nuværende tidspunkt ikke inde i den nye branch. 
+
+Du skifter til en branch med kommandoen **>git checkout** efterfulgt af navnet på den branch, du vil skifte til. Eller du kan oprette en branch og skifte til den i ét hug med kommandoen **>git checkout -b** efterfulgt af navnet på den nye branch.
+
+For at slå to branches sammen, skal du først skifte til den branch, du vil merge til. Du skriver altså eksempelvis først **>git checkout master** for at skifte til master-branch. Dernæst kan du bruge kommandoen **>git merge** efterfulgt at den branch, du vil slå sammen med master.
 
 ###Arbejdsgangen
 For at opsummere, så vil man første gang, man begynder på at redigere i et projekt, starte med **clone**. Men når du senere vil arbejde videre på projektet, så er det en god idé at starte med at lave et **pull** for at hente de seneste ændringer fra repository'et.
