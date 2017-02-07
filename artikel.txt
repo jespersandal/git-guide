@@ -76,7 +76,7 @@ For at få din kode op på Github, bruger du kommandoen **>git push**. Den sende
 
 Et commit er altid inden for den branch, du arbejder i. Hvis du pusher et commit i en anden branch end master, så bliver den ikke automatisk slået sammen med master-branchen.
 
-Og hvis du ikke har administrator-rettigheder til det pågældende repository, så skal du lave en 'pull request'. Et pull henter ændringer til en branch og forsøger at merge dem. Når du laver en pull request, beder du administratoren eller dine kolleger om at se dine ændringer igennem og merge dem med jeres master-branch.
+Og hvis du ikke har administrator-rettigheder til det pågældende repository, så skal du lave en 'pull request'. Et pull henter ændringer til en branch og forsøger at merge dem. Når du laver en pull request, beder du også administratoren eller dine kolleger om at se dine ændringer igennem og merge dem med jeres master-branch.
 
 Du skal også lave et pull for at hente opdateringer fra repository'et. Det gør du med kommandoen **>git pull**, som så forsøger at hente ændringer og slå dem sammen med din lokale version i et merge.
 
@@ -111,31 +111,14 @@ Derefter vil man lave **add**, hver gang man tilføjer filer eller er færdig me
 
 Slut derefter af med at lave et **push** for at sende alle dine commits til repository'et.
 
+Brug branches til større ændringer, men vær opmærksom på, at der er flere [måder at organisere brugen af branches](https://www.atlassian.com/git/tutorials/comparing-workflows) på med Git. Du skal også være mere opmærksom på, at alt bliver add'et og commit'ed i din branch, inden du laver et merge.
 
+Versionsstyring giver som nævnt mulighed for at [gå tilbage](https://www.atlassian.com/git/tutorials/undoing-changes) til en [tidligere version](https://github.com/blog/2019-how-to-undo-almost-anything-with-git), hvis man får lavet for meget rod i det. Det er imidlertid noget, der kræver, at man holder tungen lige i munden, for det er let at komme til at lave et irreversibel ændring.
 
+Den nemmeste måde er at bruge kommandoen **>git log** eller **>git reflog** for at få en oversigt over commits. Den sidste af de to giver en hashværdi, der kan bruges som reference og viser kun commits, man kan gå tilbage til.
 
+Dernæst kan man bruge **>git checkout** efterfulgt af hashværdien på det commit, man ønsker at vende tilbage til, og eventuelt navnet på den pågældende fil.
 
-(Vi kan lægge denne tekst og screenshots i Git-projektet)
+Der findes andre måder at gå tilbage på, men checkout er den måde, der er sikrest for den enkelte udvikler.
 
-http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
-https://guides.github.com/introduction/flow/
-https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows
-
-
-http://nvie.com/posts/a-successful-git-branching-model/
-
-Den model er imidlertid ikke helt enkel. Flere kritikere af modellen har argumenteret, at denne måde at bruge developer-branchen på faktisk er den måde, master-branchen burde bruges på. Til mindre projekter er jeg helt enig. Branches er noget af det, der gør Git svært, så det er en god idé at holde det så enkelt som muligt.
-
-https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/
-(bemærk henvisningen til den klassiske artikel om GOTO, ouch!)
-http://scottchacon.com/2011/08/31/github-flow.html
-
-Brug en ny branch til dine ændringer, så alle commits bliver samlet i samme pull request
-
-
-Så lad os se nærmere på dyret ved først at få de grundlæggende begreber på plads. 
-
-
-
-
-
+Jeg har brugt Git under arbejdet med denne artikel, så den kan faktisk også [findes på Github](https://github.com/jespersandal/git-guide). Det er i sig selv en pointe, for versionsstyring kan også anvendes uden for programmering, hvis man eksempelvis er flere personer, som arbejder på en samling af dokumenter. Det kræver dog, at alle forfatterne er friske på at lære ikke bare en håndfuld kommandoer, men især en stringent arbejdsgang, som kræver lidt øvelse at mestre.
