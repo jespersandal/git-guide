@@ -44,9 +44,9 @@ Lad os begynde ved begyndelsen. Først skal Git naturligvis [downloades](https:/
 
 Det næste trin er at vælge et **repository**. Det er det sted, du lagrer dit projekt. Det kan være en lokal mappe på din pc, eller det kan være på en server hos eksempelvis Github. Det sidste er lidt mere besværligt, men da det også er det mest nyttige, fordi det er den måde, man vil arbejde flere på samme projekt eller på forskellige computere. Så jeg vil bruge et Github-repository i min gennemgang.
 
-I første omgang er det lettest at oprette et nyt repository på Githubs hjemmeside. I det hele taget vil jeg anbefale at bruge Githubs grænseflade til alt, hvad der hedder administration af dit repository, da det er let at miste overblikket og lave fejl i kommandolinjen. Det er selvfølgelig en smagssag.
+I første omgang er det lettest at [oprette et nyt repository på Githubs hjemmeside](https://help.github.com/articles/creating-a-new-repository/). I det hele taget vil jeg anbefale at bruge Githubs grænseflade til alt, hvad der hedder administration af dit repository, da det er let at miste overblikket og lave fejl i kommandolinjen. Det er selvfølgelig en smagssag.
 
-Når du klikker dig ind i dit nye repository på Github, så er der en stor grøn knap med teksten 'Clone or download'. Klikker du på den, får du mulighed for at kopiere en URL, som peger på dit repository. Denne URL skal du bruge til første trin i at få lavet en lokal klon af filerne i repository'et.
+Når du klikker dig ind i dit nye repository på Github, så er der [en stor grøn knap](https://help.github.com/articles/cloning-a-repository/) med teksten 'Clone or download'. Klikker du på den, får du mulighed for at kopiere en URL, som peger på dit repository. Denne URL skal du bruge til første trin i at få lavet en lokal klon af filerne i repository'et.
 
 Ved kommandoprompten skal du først gå ind i den overordnede mappe, hvor du vil opbevare filerne til projektet. Derefter skal du bruge kommandoen **>git clone** efterfulgt af den URL, du kopierede fra Github.
 
@@ -103,6 +103,8 @@ For at lave en branch skal man bruge kommandoen **>git branch** efterfulgt af na
 Du skifter til en branch med kommandoen **>git checkout** efterfulgt af navnet på den branch, du vil skifte til. Eller du kan oprette en branch og skifte til den i ét hug med kommandoen **>git checkout -b** efterfulgt af navnet på den nye branch.
 
 For at slå to branches sammen, skal du først skifte til den branch, du vil merge til. Du skriver altså eksempelvis først **>git checkout master** for at skifte til master-branch. Dernæst kan du bruge kommandoen **>git merge** efterfulgt at den branch, du vil slå sammen med master.
+
+Det kan være en god idé først at lave et merge fra master til den branch, du har arbejdet på. Så kan du løse eventuelle konflikter i denne branch, før du igen merger din branch med master.
 
 ###Arbejdsgangen
 For at opsummere, så vil man første gang, man begynder på at redigere i et projekt, starte med **clone**. Men når du senere vil arbejde videre på projektet, så er det en god idé at starte med at lave et **pull** for at hente de seneste ændringer fra repository'et.
